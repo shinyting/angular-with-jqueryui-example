@@ -1,0 +1,26 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "this is the demo with angular and jqueryui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinyting/angular-with-jqueryui-example.git"
+  },
+  "keywords": [
+    "angularjs",
+    "jqueryui"
+  ],
+  "author": "ting",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shinyting/angular-with-jqueryui-example/issues"
+  },
+  "homepage": "https://github.com/shinyting/angular-with-jqueryui-example#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
