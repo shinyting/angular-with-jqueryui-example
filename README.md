@@ -10,6 +10,13 @@ npm uninstall 模块名 卸载已经安装的模块
 
 ### consolidate 模块
 
+consolidate.js 是一款js模板引擎整合库，支持流行的多种模板引擎
+
+
+### swig 模块
+
+js模板引擎
+
 
 
 
