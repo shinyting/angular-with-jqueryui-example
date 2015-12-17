@@ -18,6 +18,10 @@ app.get('/', function (req, res) {
 	});
 });
 
+app.get('/a', function (req, res) {
+	res.render('about');
+});
+
 var server = app.listen(8000, function () {
 	var host = server.address().address;
 	var port = server.address().port;
