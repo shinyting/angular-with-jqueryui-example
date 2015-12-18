@@ -1,19 +1,16 @@
-var ajudemoModule = angular.module('ajudemo', ['ngRoute']);
+var ajudemo = angular.module('ajudemo', ['ngRoute']);
 
-ajudemoModule.controller('ACtrl', function ($scope) {
 
-});
-
-ajudemoModule.controller('MainCtrl', function ($scope) {
+ajudemo.controller('MainCtrl', function ($scope) {
 	$scope.title = "this is limei";
 })
 
-ajudemoModule.config(['$routeProvider', function ($routeProvider) {
+ajudemo.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.
-	// when('/', {
-	// 	controller: MainCtrl,
-	// 	templateUrl: '../../views/index.html'
-	// }).
+	when('/a', {
+		controller: 'ACtrl',
+		templateUrl: 'views/about.html'
+	}).
 	otherwise({redirectTo:'/'});
 }]);
 
