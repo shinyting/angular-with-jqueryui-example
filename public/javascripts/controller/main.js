@@ -8,18 +8,61 @@ ajudemo.controller('MainCtrl', function ($scope) {
 	$scope.menus = [
 		{
 			mTitle: "开始",
-			mHref: '/',
-			subTitle: ["准备的库"]
+			mHref: '#/',
+			subMenu: [
+				{
+					subTitle: "准备的库",
+					subHref: '#/'
+				}
+			]
 		},
 		{
 			mTitle: "页面交互",
-			mHref: "/drag",
-			subTitle: ["元素可拖拽", "尺寸可调整", "选择", "排序"]
+			mHref: "#/drag",
+			subMenu: [
+				{
+					subTitle: "元素可拖拽",
+					subHref: "#/drag"
+				},
+				{
+					subTitle: "尺寸可调整",
+					subHref: ""
+				},
+				{
+					subTitle: "选择",
+					subHref: ""
+				},
+				{
+					subTitle: "排序",
+					subHref: ""
+				}
+			]
 		},
 		{
 			mTitle: "页面组件",
 			mHref: "/accordion",
-			subTitle: ["手风琴效果", "自动完成", "按钮", "日期选择", "对话框"]
+			subMenu: [
+				{
+					subTitle: "手风琴效果",
+					subHref: "/accordion"
+				},
+				{
+					subTitle: "自动完成",
+					subHref: ""
+				},
+				{
+					subTitle: "按钮",
+					subHref: ""
+				},
+				{
+					subTitle: "日期选择",
+					subHref: ""
+				},
+				{
+					subTitle: "对话框",
+					subHref: ""
+				}
+			]
 		}
 	];
 })
