@@ -18,10 +18,10 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-2">
-					<ul class="nav nav-pills nav-stacked">
-						<li class="active" ng-repeat="menu in menus" role="presentation">
+					<ul class="nav nav-pills nav-stacked mainMenu">
+						<li ng-repeat="menu in menus" role="presentation" ng-click="setLocation($index)" ng-class="{active:defaultUrl}">
 							<a ng-href="[[menu.mHref]]" ng-bind="menu.mTitle"></a>
-							<ul class="nav nav-pills nav-stacked">
+							<ul class="nav nav-pills nav-stacked subMenu">
 								<li ng-repeat="sub in menu.subMenu">
 									<a href="[[sub.subHref]]" ng-bind="sub.subTitle"></a>
 								</li>

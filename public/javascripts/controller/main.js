@@ -3,7 +3,7 @@ var ajudemo = angular.module('ajudemo', ['ngRoute'], function ($interpolateProvi
 	$interpolateProvider.endSymbol(']]');
 });
 
-ajudemo.controller('MainCtrl', function ($scope) {
+ajudemo.controller('MainCtrl', function ($scope, $location) {
 	$scope.logo = "angular && jqueryUi demo";
 	$scope.menus = [
 		{
@@ -65,6 +65,21 @@ ajudemo.controller('MainCtrl', function ($scope) {
 			]
 		}
 	];
+
+	var currentUrl = $location.path();
+	if (currentUrl == "/") {
+		$scope.defaultUrl = true;
+	}
+	else {
+		$scope.defaultUrl = false;
+	}
+
+	$scope.setLocation = function (index) {
+		var currentUrl = $location.path();
+		if (currentUrl == "/") {
+			$
+		}
+	}
 })
 
 ajudemo.config(['$routeProvider', function ($routeProvider) {
