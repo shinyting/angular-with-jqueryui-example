@@ -19,4 +19,10 @@ js模板引擎
 
 
 
+###swig 和 angular 双括号冲突
 
+通过修改angular的字符匹配来解决
+var ajudemo = angular.module('ajudemo', ['ngRoute'], function ($interpolateProvider) {
+	$interpolateProvider.startSymbol('[[');
+	$interpolateProvider.endSymbol(']]');
+});
