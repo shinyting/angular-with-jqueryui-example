@@ -22,7 +22,7 @@
 						<li ng-repeat="menu in menus" role="presentation" ng-click="setLocation($index)" ng-class="{active:$index==0}">
 							<a ng-href="[[menu.mHref]]" ng-bind="menu.mTitle"></a>
 							<ul class="nav nav-pills nav-stacked subMenu">
-								<li ng-repeat="sub in menu.subMenu">
+								<li ng-repeat="sub in menu.subMenu" ng-class="{choosen:$index==0&&$parent.$index==0}">
 									<a href="[[sub.subHref]]" ng-bind="sub.subTitle"></a>
 								</li>
 							</ul>

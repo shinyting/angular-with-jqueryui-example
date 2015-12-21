@@ -66,14 +66,6 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 		}
 	];
 
-	var currentUrl = $location.path();
-	if (currentUrl == "/") {
-		$scope.defaultUrl = true;
-	}
-	else {
-		$scope.defaultUrl = false;
-	}
-
 	$scope.setLocation = function (index) {
 		var currentUrl = $location.path();
 		if (currentUrl == "/") {

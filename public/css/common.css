@@ -5,9 +5,9 @@
 	line-height: 50px;
 	padding-left: 20px;
 }
-.mainMenu li.active .subMenu:first-child,
-.subMenu li.choosen{
+.subMenu li{
+	margin-left: 10px !important;
+}
+.subMenu li.choosen {
 	border-left: 2px solid #900;
-	padding-left: 10px;
-	background: #900;
 }
