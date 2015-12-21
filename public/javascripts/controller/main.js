@@ -9,10 +9,12 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 		{
 			mTitle: "开始",
 			mHref: '#/',
+			choosen: true,
 			subMenu: [
 				{
 					subTitle: "准备的库",
-					subHref: '#/'
+					subHref: '#/',
+					choosen: true
 				}
 			]
 		},
@@ -66,11 +68,53 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 		}
 	];
 
-	$scope.setLocation = function (index) {
-		var currentUrl = $location.path();
-		if (currentUrl == "/") {
-			$
+	//配置一级菜单和二级菜单的选中状态
+	$scope.setLocation = function (event, index, parentIndex) {
+		//鼠标点击一级菜单
+		if (!parentIndex) {
+			for (var i = 0; i < $scope.menus.length; i ++) {
+				if (index == i) {
+					$scope.menus[i].choosen = true;
+					$scope.menus[i].subMenu[0].choosen = true;
+					for (var j = 1; j < $scope.menus[i].subMenu.length; j ++) {
+						$scope.menus[i].subMenu[j].choosen = false;
+					}
+				}
+				else {
+					$scope.menus[i].choosen = false;
+					for (var j = 0; j < $scope.menus[i].subMenu.length; j ++) {
+						$scope.menus[i].subMenu[j].choosen = false;
+					}
+				}
+			}
+			console.log(index);
 		}
+		//鼠标点击二级菜单
+		else {
+			for (var i = 0; i < $scope.menus.length; i ++) {
+				if (parentIndex == i) {
+					$scope.menus[i].choosen = true;
+					for (var j = 0; j < $scope.menus[i].subMenu.length; j ++) {
+						if (index == j) {
+							$scope.menus[i].subMenu[j].choosen = true;
+						}
+						else {
+							$scope.menus[i].subMenu[j].choosen = false;
+						}
+					}
+				}
+				else {
+					$scope.menus[i].choosen = false;
+					for (var j = 0; j < $scope.menus[i].subMenu.length; j ++) {
+						$scope.menus[i].subMenu[j].choosen = false;
+					}
+				}
+			}
+			console.log(index);
+			console.log(parentIndex);
+		}
+		// event.preventDefault();
+		event.stopPropagation();
 	}
 })
 
