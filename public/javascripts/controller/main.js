@@ -87,7 +87,6 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 					}
 				}
 			}
-			console.log(index);
 		}
 		//鼠标点击二级菜单
 		else {
@@ -110,10 +109,8 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 					}
 				}
 			}
-			console.log(index);
-			console.log(parentIndex);
 		}
-		// event.preventDefault();
+		//阻止事件冒泡，但不能阻止a链接的默认行为
 		event.stopPropagation();
 	}
 })
