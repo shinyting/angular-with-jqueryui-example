@@ -1,3 +1,4 @@
+/*top style*/
 .logo {
 	color: #999;
 	margin: 0px;
@@ -5,9 +6,33 @@
 	line-height: 50px;
 	padding-left: 20px;
 }
+
+/*menu style*/
 .subMenu li{
 	margin-left: 10px !important;
 }
 .subMenu li.choosen {
-	border-left: 2px solid #900;
+	border-left: 2px solid #563d7c;
+	background: #5bc0de;
+}
+.subMenu li.choosen a {
+	color: #fff;
+}
+
+/*drag page style*/
+
+
+/*common style*/
+.box {
+	width: 100%;
+	height: 500px;
+	border: 1px solid #ddd;
+}
+.nav-pills>li>a {
+	color: #333;
+}
+.nav-pills>li>a:hover,
+ .nav-pills>li>a:focus{
+	background: #5bc0de;
+	color: #fff;
 }

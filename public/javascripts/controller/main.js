@@ -9,12 +9,10 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 		{
 			mTitle: "开始",
 			mHref: '#/',
-			choosen: true,
 			subMenu: [
 				{
 					subTitle: "准备的库",
 					subHref: '#/',
-					choosen: true
 				}
 			]
 		},
@@ -46,7 +44,7 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 			subMenu: [
 				{
 					subTitle: "手风琴效果",
-					subHref: "/accordion"
+					subHref: "#/accordion"
 				},
 				{
 					subTitle: "自动完成",
@@ -68,7 +66,21 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 		}
 	];
 
-	//配置一级菜单和二级菜单的选中状态
+	//左侧菜单默认选中状态的设置
+	var curUrl = $location.path();
+	for (var i = 0; i < $scope.menus.length; i ++) {
+		var menu = $scope.menus[i];
+		for (var j = 0; j < menu.subMenu.length; j ++) {
+			var sMenu = menu.subMenu[j];
+			var sMenuUrl = sMenu.subHref.split('#')[1];
+			if (sMenuUrl == curUrl) {
+				sMenu.choosen = true;
+				menu.choosen = true;
+			}
+		}
+	}
+
+	//配置鼠标点击时一级菜单和二级菜单的选中状态
 	$scope.setLocation = function (event, index, parentIndex) {
 		//鼠标点击一级菜单
 		if (!parentIndex) {
