@@ -28,7 +28,7 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 				},
 				{
 					subTitle: "尺寸可调整",
-					subHref: ""
+					subHref: "#/resize"
 				},
 				{
 					subTitle: "选择",
@@ -124,6 +124,10 @@ ajudemo.config(['$routeProvider', function ($routeProvider) {
 	when('/drag', {
 		controller: 'DragCtrl',
 		templateUrl: 'views/drag.html'
+	}).
+	when('/resize', {
+		controller: 'ResizeCtrl',
+		templateUrl: 'views/resize.html'
 	}).
 	otherwise({redirectTo:'/'});
 }]);
