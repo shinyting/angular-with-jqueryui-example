@@ -19,7 +19,7 @@
 			<div class="row">
 				<div class="col-md-2">
 					<ul class="nav nav-pills nav-stacked mainMenu">
-						<li ng-repeat="menu in menus" role="presentation" ng-click="setLocation($index)" ng-class="{active:defaultUrl}">
+						<li ng-repeat="menu in menus" role="presentation" ng-click="setLocation($index)" ng-class="{active:$index==0}">
 							<a ng-href="[[menu.mHref]]" ng-bind="menu.mTitle"></a>
 							<ul class="nav nav-pills nav-stacked subMenu">
 								<li ng-repeat="sub in menu.subMenu">
