@@ -68,6 +68,9 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 
 	//左侧菜单默认选中状态的设置
 	var curUrl = $location.path();
+	if (!curUrl) {
+		curUrl = "/";
+	}
 	for (var i = 0; i < $scope.menus.length; i ++) {
 		var menu = $scope.menus[i];
 		for (var j = 0; j < menu.subMenu.length; j ++) {
