@@ -1,3 +1,3 @@
 ajudemo.controller('DragCtrl', function ($scope) {
-	$scope.about = "this is about page";
+	$scope.dragText = "this is drag page";
 });

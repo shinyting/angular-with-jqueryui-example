@@ -1,7 +1,7 @@
 ajudemo.directive("dragElement", function () {
 	return {
-		scope: {},
-		link: function (scope, element, attr) {
+		// require: 'ngModel',
+		link: function (scope, element, attr, ngModel) {
 			if (angular.isDefined(attr.dragElementMore)) {
 				element.draggable({
 					addClasses: false,
@@ -25,6 +25,8 @@ ajudemo.directive("dragElement", function () {
 				element.draggable({
 					addClasses: false
 				});
+				// console.log(ngModel.$viewValue);
+				// ngModel.$setViewValue("page page page");
 			}
 		}
 	}
