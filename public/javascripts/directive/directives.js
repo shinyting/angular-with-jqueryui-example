@@ -1,6 +1,6 @@
 ajudemo.directive("dragElement", function () {
 	return {
-		// require: 'ngModel',
+		require: 'ngModel',
 		link: function (scope, element, attr, ngModel) {
 			if (angular.isDefined(attr.dragElementMore)) {
 				element.draggable({
@@ -18,6 +18,9 @@ ajudemo.directive("dragElement", function () {
 					},
 					drag: function (event, ui) {
 						ui.position.left = Math.min(150, ui.position.left);
+					},
+					stop: function (event, ui) {
+						ngModel.$setViewValue("this is the more drag element");
 					}
 				});
 			}
@@ -25,9 +28,9 @@ ajudemo.directive("dragElement", function () {
 				element.draggable({
 					addClasses: false
 				});
-				// console.log(ngModel.$viewValue);
-				// ngModel.$setViewValue("page page page");
+				ngModel.$setViewValue("this is the basic drag element");
 			}
+			console.log(ngModel.$viewValue);
 		}
 	}
 })
