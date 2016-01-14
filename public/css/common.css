@@ -27,6 +27,13 @@
 	color: #fff;
 }
 
+/*resize page style*/
+#resizable {
+	width: 100px;
+	height: 100px;
+	background: #ccc;
+}
+
 /*common style*/
 .box {
 	width: 100%;

@@ -30,7 +30,17 @@ ajudemo.directive("dragElement", function () {
 				});
 				ngModel.$setViewValue("this is the basic drag element");
 			}
-			console.log(ngModel.$viewValue);
+		}
+	}
+})
+.directive("resizeElement", function () {
+	return {
+		link: function (scope, element, attr) {
+			element.on('click', function () {
+				console.log('123');
+			})
+			element.resizable({
+			});
 		}
 	}
 })
