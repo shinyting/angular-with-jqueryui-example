@@ -3,7 +3,7 @@ var ajudemo = angular.module('ajudemo', ['ngRoute'], function ($interpolateProvi
 	$interpolateProvider.endSymbol(']]');
 });
 
-ajudemo.controller('MainCtrl', function ($scope, $location) {
+ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 	$scope.logo = "angular && jqueryUi demo";
 	$scope.menus = [
 		{
@@ -66,22 +66,39 @@ ajudemo.controller('MainCtrl', function ($scope, $location) {
 		}
 	];
 
-	//左侧菜单默认选中状态的设置
-	var curUrl = $location.path();
-	if (!curUrl) {
-		curUrl = "/";
-	}
-	for (var i = 0; i < $scope.menus.length; i ++) {
-		var menu = $scope.menus[i];
-		for (var j = 0; j < menu.subMenu.length; j ++) {
-			var sMenu = menu.subMenu[j];
-			var sMenuUrl = sMenu.subHref.split('#')[1];
-			if (sMenuUrl == curUrl) {
-				sMenu.choosen = true;
-				menu.choosen = true;
-			}
+	//url改变
+	$rootScope.$on('$routeChangeSuccess', function () {
+		//左侧菜单默认选中状态的设置
+		$scope.curUrl = $location.path();
+		if (!$scope.curUrl) {
+			$scope.curUrl = "/";
 		}
-	}
+		for (var i = 0; i < $scope.menus.length; i ++) {
+			var inMenu;
+			var menu = $scope.menus[i];
+			for (var j = 0; j < menu.subMenu.length; j ++) {
+				var sMenu = menu.subMenu[j];
+				var sMenuUrl = sMenu.subHref.split('#')[1];
+				if (sMenuUrl == $scope.curUrl) {
+					sMenu.choosen = true;
+					inMenu = true;
+					menu.choosen = true;
+				}
+				else {
+					sMenu.choosen = false;
+					// menu.choosen = false;
+					inMenu = false;
+				}
+
+			}
+			// if (inMenu) {
+			// 	menu.choosen = true;
+			// }
+			// else {
+			// 	menu.choosen = false;
+			// }
+		}
+	});
 
 	//配置鼠标点击时一级菜单和二级菜单的选中状态
 	$scope.setLocation = function (event, index, parentIndex) {
