@@ -19,6 +19,11 @@
 	color: #fff;
 }
 
+.subMenu li.choosen a:focus {
+	background: #5bc0de;
+	color: #fff;
+}
+
 /*drag page style*/
 .test-box {
 	width: 100px;
@@ -44,10 +49,13 @@
 .nav-pills>li>a {
 	color: #333;
 }
-.nav-pills>li>a:hover,
- .nav-pills>li>a:focus{
+.nav-pills>li>a:hover {
 	background: #5bc0de;
 	color: #fff;
+}
+.nav-pills>li>a:focus{
+	background: #fff;
+	color: #333;
 }
 .blue-bg {
 	background: #007cd3;

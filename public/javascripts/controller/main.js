@@ -66,7 +66,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 		}
 	];
 
-	//url改变
+	//url改变时需要配置对应的菜单栏的选中状态
 	$rootScope.$on('$routeChangeSuccess', function () {
 		//左侧菜单默认选中状态的设置
 		$scope.curUrl = $location.path();
@@ -74,77 +74,87 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 			$scope.curUrl = "/";
 		}
 		for (var i = 0; i < $scope.menus.length; i ++) {
-			var inMenu;
+			var inMenu = [];
 			var menu = $scope.menus[i];
 			for (var j = 0; j < menu.subMenu.length; j ++) {
 				var sMenu = menu.subMenu[j];
 				var sMenuUrl = sMenu.subHref.split('#')[1];
 				if (sMenuUrl == $scope.curUrl) {
 					sMenu.choosen = true;
-					inMenu = true;
-					menu.choosen = true;
+					inMenu.push(true);
 				}
 				else {
 					sMenu.choosen = false;
-					// menu.choosen = false;
-					inMenu = false;
+					inMenu.push(false);
 				}
-
+				console.log(sMenu.choosen);
 			}
-			// if (inMenu) {
-			// 	menu.choosen = true;
-			// }
-			// else {
-			// 	menu.choosen = false;
-			// }
+			var flag;
+			for (var k = 0; k < inMenu.length; k ++) {
+				if (inMenu[k] == true) {
+					flag = true;
+					break;
+				}
+				else {
+					flag = false;
+				}
+			}
+			if (flag == true) {
+				menu.choosen = true;
+			}
+			else {
+				menu.choosen = false;
+			}
 		}
 	});
 
 	//配置鼠标点击时一级菜单和二级菜单的选中状态
-	$scope.setLocation = function (event, index, parentIndex) {
-		//鼠标点击一级菜单
-		if (!parentIndex) {
-			for (var i = 0; i < $scope.menus.length; i ++) {
-				if (index == i) {
-					$scope.menus[i].choosen = true;
-					$scope.menus[i].subMenu[0].choosen = true;
-					for (var j = 1; j < $scope.menus[i].subMenu.length; j ++) {
-						$scope.menus[i].subMenu[j].choosen = false;
-					}
-				}
-				else {
-					$scope.menus[i].choosen = false;
-					for (var j = 0; j < $scope.menus[i].subMenu.length; j ++) {
-						$scope.menus[i].subMenu[j].choosen = false;
-					}
-				}
-			}
-		}
-		//鼠标点击二级菜单
-		else {
-			for (var i = 0; i < $scope.menus.length; i ++) {
-				if (parentIndex == i) {
-					$scope.menus[i].choosen = true;
-					for (var j = 0; j < $scope.menus[i].subMenu.length; j ++) {
-						if (index == j) {
-							$scope.menus[i].subMenu[j].choosen = true;
-						}
-						else {
-							$scope.menus[i].subMenu[j].choosen = false;
-						}
-					}
-				}
-				else {
-					$scope.menus[i].choosen = false;
-					for (var j = 0; j < $scope.menus[i].subMenu.length; j ++) {
-						$scope.menus[i].subMenu[j].choosen = false;
-					}
-				}
-			}
-		}
-		//阻止事件冒泡，但不能阻止a链接的默认行为
-		event.stopPropagation();
-	}
+	//没有发现监测路由变化方法时为菜单点击写的方法
+	//有了$rootScope.$on('$routeChangeSuccess', function () {}配置菜单就方便很多
+	// $scope.setLocation = function (event, index, parentIndex) {
+	// 	//鼠标点击一级菜单
+	// 	if (!parentIndex) {
+	// 		for (var i = 0; i < $scope.menus.length; i ++) {
+	// 			if (index == i) {
+	// 				$scope.menus[i].choosen = true;
+	// 				$scope.menus[i].subMenu[0].choosen = true;
+	// 				for (var j = 1; j < $scope.menus[i].subMenu.length; j ++) {
+	// 					$scope.menus[i].subMenu[j].choosen = false;
+	// 				}
+	// 			}
+	// 			else {
+	// 				$scope.menus[i].choosen = false;
+	// 				for (var j = 0; j < $scope.menus[i].subMenu.length; j ++) {
+	// 					$scope.menus[i].subMenu[j].choosen = false;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// 	//鼠标点击二级菜单
+	// 	else {
+	// 		for (var i = 0; i < $scope.menus.length; i ++) {
+	// 			if (parentIndex == i) {
+	// 				$scope.menus[i].choosen = true;
+	// 				for (var j = 0; j < $scope.menus[i].subMenu.length; j ++) {
+	// 					if (index == j) {
+	// 						$scope.menus[i].subMenu[j].choosen = true;
+	// 					}
+	// 					else {
+	// 						$scope.menus[i].subMenu[j].choosen = false;
+	// 					}
+	// 				}
+	// 			}
+	// 			else {
+	// 				$scope.menus[i].choosen = false;
+	// 				for (var j = 0; j < $scope.menus[i].subMenu.length; j ++) {
+	// 					$scope.menus[i].subMenu[j].choosen = false;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// 	//阻止事件冒泡，但不能阻止a链接的默认行为
+	// 	event.stopPropagation();
+	// }
 })
 
 ajudemo.config(['$routeProvider', function ($routeProvider) {
