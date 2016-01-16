@@ -30,7 +30,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 				},
 				{
 					subTitle: "选择",
-					subHref: ""
+					subHref: "#/select"
 				},
 				{
 					subTitle: "排序",
@@ -157,6 +157,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 	// }
 })
 
+//配置路由
 ajudemo.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.
 	when('/', {
@@ -170,6 +171,10 @@ ajudemo.config(['$routeProvider', function ($routeProvider) {
 	when('/resize', {
 		controller: 'ResizeCtrl',
 		templateUrl: 'views/resize.html'
+	}).
+	when('/select', {
+		controller: 'SelectCtrl',
+		templateUrl: 'views/select.html'
 	}).
 	otherwise({redirectTo:'/'});
 }]);
