@@ -89,3 +89,18 @@ ajudemo.directive("dragElement", function () {
 		}
 	}
 })
+.directive("autocompleteElement", function () {
+	return {
+		require: 'ngModel',
+		link: function (scope, element, attr, ngModel) {
+			element.autocomplete({
+				autoFocus: true,
+				source: ["apple", "huawei","vivo", "HTC", "xiaomi", "oppo", "SAMSUNG"],
+				close: function (event, ui) {
+					console.log(event.target.value);
+					ngModel.$setViewValue(event.target.value);
+				}
+			})
+		}
+	}
+})

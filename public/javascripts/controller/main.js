@@ -48,7 +48,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 				},
 				{
 					subTitle: "自动完成",
-					subHref: ""
+					subHref: "#/autoComplete"
 				},
 				{
 					subTitle: "按钮",
@@ -183,6 +183,10 @@ ajudemo.config(['$routeProvider', function ($routeProvider) {
 	when('/accordion', {
 		controller: 'AccordionCtrl',
 		templateUrl: 'views/accordion.html'
+	}).
+	when('/autoComplete', {
+		controller: 'AutoCompleteCtrl',
+		templateUrl: 'views/autoComplete.html'
 	}).
 	otherwise({redirectTo:'/'});
 }]);

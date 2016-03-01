@@ -87,6 +87,7 @@
 	height: 500px;
 	border: 1px solid #ddd;
 	overflow: hidden;
+	padding: 10px;
 }
 .nav-pills>li>a {
 	color: #333;
