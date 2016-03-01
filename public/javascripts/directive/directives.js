@@ -1,3 +1,6 @@
+//页面交互部分
+
+//元素可拖拽
 ajudemo.directive("dragElement", function () {
 	return {
 		require: 'ngModel',
@@ -33,6 +36,7 @@ ajudemo.directive("dragElement", function () {
 		}
 	}
 })
+//元素大小可调整
 .directive("resizeElement", function () {
 	return {
 		link: function (scope, element, attr) {
@@ -44,6 +48,7 @@ ajudemo.directive("dragElement", function () {
 		}
 	}
 })
+//元素可选择
 .directive("selectElement", function () {
 	return {
 		link: function (scope, element, attr) {
@@ -55,6 +60,7 @@ ajudemo.directive("dragElement", function () {
 		}
 	}
 })
+//元素可排序
 .directive("sortElement", function () {
 	return{
 		require: 'ngModel',
@@ -82,6 +88,10 @@ ajudemo.directive("dragElement", function () {
 		}
 	}
 })
+
+//页面组件部分
+
+//手风琴折叠
 .directive("accordionElement", function () {
 	return {
 		link: function (scope, element, attr) {
@@ -89,6 +99,7 @@ ajudemo.directive("dragElement", function () {
 		}
 	}
 })
+//自动完成
 .directive("autocompleteElement", function () {
 	return {
 		require: 'ngModel',
