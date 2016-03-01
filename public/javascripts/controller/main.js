@@ -34,7 +34,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 				},
 				{
 					subTitle: "排序",
-					subHref: ""
+					subHref: "#/sort"
 				}
 			]
 		},
@@ -175,6 +175,10 @@ ajudemo.config(['$routeProvider', function ($routeProvider) {
 	when('/select', {
 		controller: 'SelectCtrl',
 		templateUrl: 'views/select.html'
+	}).
+	when('/sort', {
+		controller: 'SortCtrl',
+		templateUrl: 'views/sort.html'
 	}).
 	otherwise({redirectTo:'/'});
 }]);

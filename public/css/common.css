@@ -56,6 +56,18 @@
 	background: #999;
 }
 
+/*sort page style*/
+.sort-list {
+	margin: 20px;
+	width: 40%;
+}
+.sort-list li {
+	border: 1px solid #eee;
+	padding: 5px;
+	background: #ddd;
+	margin: 10px;
+}
+
 /*common style*/
 .box {
 	width: 100%;
