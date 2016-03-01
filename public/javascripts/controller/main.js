@@ -51,15 +51,23 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 					subHref: "#/autoComplete"
 				},
 				{
-					subTitle: "按钮",
-					subHref: ""
-				},
-				{
 					subTitle: "日期选择",
 					subHref: ""
 				},
 				{
 					subTitle: "对话框",
+					subHref: ""
+				},
+				{
+					subTitle: "滑块",
+					subHref: ""
+				},
+				{
+					subTitle: "选项卡",
+					subHref: ""
+				},
+				{
+					subTitle: "提示",
 					subHref: ""
 				}
 			]
