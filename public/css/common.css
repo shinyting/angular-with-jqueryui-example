@@ -68,6 +68,19 @@
 	margin: 10px;
 }
 
+/*accordion page style*/
+#accordion {
+	width: 40%;
+	margin: 10px;
+}
+#accordion div {
+	padding: 10px;
+	height: auto !important;
+}
+#accordion h3 {
+	font-weight: bold;
+}
+
 /*common style*/
 .box {
 	width: 100%;

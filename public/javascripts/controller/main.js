@@ -40,7 +40,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 		},
 		{
 			mTitle: "页面组件",
-			mHref: "/accordion",
+			mHref: "#/accordion",
 			subMenu: [
 				{
 					subTitle: "手风琴效果",
@@ -179,6 +179,10 @@ ajudemo.config(['$routeProvider', function ($routeProvider) {
 	when('/sort', {
 		controller: 'SortCtrl',
 		templateUrl: 'views/sort.html'
+	}).
+	when('/accordion', {
+		controller: 'AccordionCtrl',
+		templateUrl: 'views/accordion.html'
 	}).
 	otherwise({redirectTo:'/'});
 }]);

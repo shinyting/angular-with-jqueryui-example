@@ -82,3 +82,10 @@ ajudemo.directive("dragElement", function () {
 		}
 	}
 })
+.directive("accordionElement", function () {
+	return {
+		link: function (scope, element, attr) {
+			element.accordion();
+		}
+	}
+})
