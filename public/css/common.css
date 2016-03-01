@@ -39,6 +39,23 @@
 	background: #ccc;
 }
 
+/*select page style*/
+.select-list {
+	margin: 20px;
+	width: 40%;
+}
+.select-list li {
+	border: 1px solid #eee;
+	padding: 5px;
+	margin: 10px;
+}
+.select-list .ui-selecting {
+	background: #ccc;
+}
+.select-list .ui-selected {
+	background: #999;
+}
+
 /*common style*/
 .box {
 	width: 100%;

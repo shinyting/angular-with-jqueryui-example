@@ -44,3 +44,14 @@ ajudemo.directive("dragElement", function () {
 		}
 	}
 })
+.directive("selectElement", function () {
+	return {
+		link: function (scope, element, attr) {
+			element.selectable({
+				create: function (event, ui) {
+					alert("selectable create");
+				}
+			});
+		}
+	}
+})
