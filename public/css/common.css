@@ -103,3 +103,17 @@
 .blue-bg {
 	background: #007cd3;
 }
+button:focus {
+	outline: 0 !important;
+}
+
+/*test background fixed*/
+.bgimg1 {
+	background: url("../images/bg.jpg") no-repeat fixed;
+	width: 1600px;
+	height: 900px;
+}
+.bgimg2 {
+	background: url("../images/alione.jpg") no-repeat fixed;
+	width: 800px;
+}

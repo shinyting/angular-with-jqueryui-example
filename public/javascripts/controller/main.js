@@ -56,7 +56,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 				},
 				{
 					subTitle: "对话框",
-					subHref: ""
+					subHref: "#/dialog"
 				},
 				{
 					subTitle: "滑块",
@@ -199,6 +199,10 @@ ajudemo.config(['$routeProvider', function ($routeProvider) {
 	when('/datepicker', {
 		controller: 'DatepickerCtrl',
 		templateUrl: 'views/datepicker.html'
+	}).
+	when('/dialog', {
+		controller: 'DialogCtrl',
+		templateUrl: 'views/dialog.html'
 	}).
 	otherwise({redirectTo:'/'});
 }]);
