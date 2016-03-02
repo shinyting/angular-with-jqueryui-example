@@ -52,7 +52,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 				},
 				{
 					subTitle: "日期选择",
-					subHref: ""
+					subHref: "#/datepicker"
 				},
 				{
 					subTitle: "对话框",
@@ -195,6 +195,10 @@ ajudemo.config(['$routeProvider', function ($routeProvider) {
 	when('/autoComplete', {
 		controller: 'AutoCompleteCtrl',
 		templateUrl: 'views/autoComplete.html'
+	}).
+	when('/datepicker', {
+		controller: 'DatepickerCtrl',
+		templateUrl: 'views/datepicker.html'
 	}).
 	otherwise({redirectTo:'/'});
 }]);
