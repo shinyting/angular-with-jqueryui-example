@@ -1,5 +1,15 @@
-<div>
-	<button class="btn btn-default">点击显示对话框</button>
+<div dialog dialog-title="letter table" ng-model="itemlist">
+	<button class="btn btn-default" id="show">点击显示对话框</button>
+	<div id="dialog">
+		<table class="table table-bordered">
+			<tr>
+				<th ng-repeat="th in itemlist" ng-bind="th.title"></th>
+			</tr>
+			<tr>
+				<td ng-repeat="th in itemlist" ng-bind="th.content"></td>
+			</tr>
+		</table>
+	</div>
 </div>
 <!-- <div class="bgimg1"></div>
 <div class="bgimg2"></div>

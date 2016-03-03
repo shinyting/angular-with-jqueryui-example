@@ -1,0 +1,3 @@
+ajudemo.service("Dialog", function () {
+	
+})

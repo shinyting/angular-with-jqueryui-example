@@ -115,6 +115,7 @@ ajudemo.directive("dragElement", function () {
 		}
 	}
 })
+//日期选择
 .directive("datepicker", function () {
 	return {
 		require: 'ngModel',
@@ -126,6 +127,37 @@ ajudemo.directive("dragElement", function () {
 				//月份设置为中文显示
 				monthNames: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
 			});
+		}
+	}
+})
+//对话框
+.directive("dialog", function () {
+	return {
+		require: 'ngModel',
+		link: function (scope, element, attr, ngModel) {
+			var $dialog = element.find('#dialog');
+			var showDialogBtn = element.find('#show');
+			if(angular.isDefined("dialogTitle")) {
+				console.log(attr);
+			}
+			else {
+				console.log('jgjkg');
+			}
+			$dialog.dialog({
+				autoOpen: false,
+				modal: true,
+				width: 500,
+				height: 300,
+				title: attr.dialogTitle,
+				position: {
+					my: "left top",
+					at: 'left bottom',
+					of: showDialogBtn
+				}
+			});
+			showDialogBtn[0].onclick = function () {
+				$dialog.dialog("open");
+			}
 		}
 	}
 })
