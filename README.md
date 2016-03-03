@@ -1,5 +1,15 @@
 angular-with-jqueryui-example
 =============================
+### 主要结构
+
+node, bower, bootstrap, jqueryui, angularjs
+
+node搭建服务
+bower将静态资源托管至public文件夹，该方法使用时需安装bower，将需要的文件使用bower install xxx --save 写入bower.json
+bootstrap设置公共样式
+核心功能是jQueryui各个demo的集合
+angularjs完成菜单配置及数据展示
+
 
 ### 安装的模块写入依赖文件
 
