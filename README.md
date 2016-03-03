@@ -10,7 +10,7 @@ bower将静态资源托管至public文件夹，该方法使用时需安装bower�
 
 bootstrap设置公共样式  
 
-核心功能是jQueryui各个demo的集合  
+核心功能是jQueryui各个常用组件demo的集合  
 
 angularjs完成菜单配置及数据展示
 
@@ -30,6 +30,7 @@ consolidate.js 是一款js模板引擎整合库，支持流行的多种模板引
 ### swig 模块
 
 js模板引擎
+因为模板文件直接使用html格式，所以在网上搜到了swig和consolidate来实现
 
 
 
