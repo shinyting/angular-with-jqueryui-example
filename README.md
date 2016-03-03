@@ -29,7 +29,7 @@ consolidate.js 是一款js模板引擎整合库，支持流行的多种模板引
 
 ### swig 模块
 
-js模板引擎
+js模板引擎  
 因为模板文件直接使用html格式，所以在网上搜到了swig和consolidate来实现
 
 
