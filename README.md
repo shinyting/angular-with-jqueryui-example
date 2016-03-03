@@ -41,3 +41,14 @@ var ajudemo = angular.module('ajudemo', ['ngRoute'], function ($interpolateProvi
 	$interpolateProvider.startSymbol('[[');
 	$interpolateProvider.endSymbol(']]');
 });
+
+
+//2016-03-03 v1.0 完成基本功能
+//包括：1，菜单配置，点击菜单正确高亮相应条目
+//2, 点击菜单正确跳转页面
+//3, 完成jQueryui常用组件的基本使用demo
+
+//v2.0 预计增加的功能
+//1, 页面美化
+//2, 使用angularjs进行jQueryui组件交互后的正确模型内容展示
+//3，组件的简单扩展
