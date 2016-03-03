@@ -64,7 +64,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 				},
 				{
 					subTitle: "选项卡",
-					subHref: ""
+					subHref: "#/tab"
 				},
 				{
 					subTitle: "提示",
@@ -207,6 +207,10 @@ ajudemo.config(['$routeProvider', function ($routeProvider) {
 	when('/slider', {
 		controller: 'SliderCtrl',
 		templateUrl: 'views/slider.html'
+	}).
+	when('/tab', {
+		controller: 'TabCtrl',
+		templateUrl: 'views/tab.html'
 	}).
 	otherwise({redirectTo:'/'});
 }]);

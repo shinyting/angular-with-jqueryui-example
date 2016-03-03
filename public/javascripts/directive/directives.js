@@ -180,3 +180,11 @@ ajudemo.directive("dragElement", function () {
 		}
 	}
 })
+//选项卡
+.directive("tab", function () {
+	return {
+		link: function (scope, element, attr, ngModel) {
+			element.tabs();
+		}
+	}
+})
