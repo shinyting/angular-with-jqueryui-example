@@ -68,7 +68,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 				},
 				{
 					subTitle: "提示",
-					subHref: ""
+					subHref: "#/tip"
 				}
 			]
 		}
@@ -95,7 +95,6 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 					sMenu.choosen = false;
 					inMenu.push(false);
 				}
-				console.log(sMenu.choosen);
 			}
 			var flag;
 			for (var k = 0; k < inMenu.length; k ++) {
@@ -211,6 +210,10 @@ ajudemo.config(['$routeProvider', function ($routeProvider) {
 	when('/tab', {
 		controller: 'TabCtrl',
 		templateUrl: 'views/tab.html'
+	}).
+	when('/tip', {
+		controller: 'TooltipCtrl',
+		templateUrl: 'views/tooltip.html'
 	}).
 	otherwise({redirectTo:'/'});
 }]);

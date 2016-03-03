@@ -183,8 +183,17 @@ ajudemo.directive("dragElement", function () {
 //选项卡
 .directive("tab", function () {
 	return {
-		link: function (scope, element, attr, ngModel) {
+		link: function (scope, element, attr) {
 			element.tabs();
+		}
+	}
+})
+//提示
+.directive("tooltip", function () {
+	return {
+		link: function (scope, element, attr) {
+			//使用tooltip组件的元素需要设置title属性，否则tip将无效
+			element.tooltip();
 		}
 	}
 })
