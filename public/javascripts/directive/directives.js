@@ -137,12 +137,12 @@ ajudemo.directive("dragElement", function () {
 		link: function (scope, element, attr, ngModel) {
 			var $dialog = element.find('#dialog');
 			var showDialogBtn = element.find('#show');
-			if(angular.isDefined("dialogTitle")) {
-				console.log(attr);
-			}
-			else {
-				console.log('jgjkg');
-			}
+			// if(angular.isDefined("dialogTitle")) {
+			// 	console.log(attr);
+			// }
+			// else {
+			// 	console.log('jgjkg');
+			// }
 			$dialog.dialog({
 				autoOpen: false,
 				modal: true,
@@ -158,6 +158,25 @@ ajudemo.directive("dragElement", function () {
 			showDialogBtn[0].onclick = function () {
 				$dialog.dialog("open");
 			}
+		}
+	}
+})
+//滑块
+.directive("slider", function () {
+	return {
+		require: 'ngModel',
+		link: function (scope, element, attr, ngModel) {
+			element.slider({
+				min: Number(attr.sliderMin),
+				max: Number(attr.sliderMax),
+				// value: -1,
+				step: Number(attr.sliderStep),
+				stop: function (event, ui) {
+					ngModel.$setViewValue(ui.value);
+				}
+			});
+			var number = element.slider("option", 'value');
+			ngModel.$setViewValue(number);
 		}
 	}
 })

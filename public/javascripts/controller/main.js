@@ -60,7 +60,7 @@ ajudemo.controller('MainCtrl', function ($scope, $rootScope, $location) {
 				},
 				{
 					subTitle: "滑块",
-					subHref: ""
+					subHref: "#/slider"
 				},
 				{
 					subTitle: "选项卡",
@@ -203,6 +203,10 @@ ajudemo.config(['$routeProvider', function ($routeProvider) {
 	when('/dialog', {
 		controller: 'DialogCtrl',
 		templateUrl: 'views/dialog.html'
+	}).
+	when('/slider', {
+		controller: 'SliderCtrl',
+		templateUrl: 'views/slider.html'
 	}).
 	otherwise({redirectTo:'/'});
 }]);

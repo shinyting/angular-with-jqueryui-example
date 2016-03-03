@@ -117,3 +117,8 @@ button:focus {
 	background: url("../images/alione.jpg") no-repeat fixed;
 	width: 800px;
 }
+
+/*slider page style*/
+.slide {
+	width: 40%;
+}
