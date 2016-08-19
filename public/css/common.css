@@ -1,6 +1,6 @@
 /*top style*/
 .logo {
-	color: #999;
+	color: #556462;
 	margin: 0px;
 	font-size: 28px;
 	line-height: 50px;
@@ -13,14 +13,14 @@
 }
 .subMenu li.choosen {
 	border-left: 2px solid #563d7c;
-	background: #5bc0de;
+	background: #8ba160;
 }
 .subMenu li.choosen a {
 	color: #fff;
 }
 
 .subMenu li.choosen a:focus {
-	background: #5bc0de;
+	background: #8ba160;
 	color: #fff;
 }
 
@@ -93,7 +93,7 @@
 	color: #333;
 }
 .nav-pills>li>a:hover {
-	background: #5bc0de;
+	background: #c4d9b9;
 	color: #fff;
 }
 .nav-pills>li>a:focus{
@@ -105,6 +105,10 @@
 }
 button:focus {
 	outline: 0 !important;
+}
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:hover {
+	background-color: #556462;
 }
 
 /*test background fixed*/
